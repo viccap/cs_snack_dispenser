@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0f1115;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f0f0f0;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card {
+  background: #1c1f26;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 255, 170, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #aaa;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.4);
+  accent-color: #00ffaa;
+}
+
+.accept-button {
+  background: linear-gradient(135deg, #00ffaa, #00d4ff);
+  border: none;
+  color: #000;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  width: 100%;
+}
+
+.accept-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.accept-button:hover:not(:disabled) {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffaa88;
+}
+
+.code {
+  margin-top: 30px;
+  font-size: 24px;
+  color: #00ffaa;
+  font-weight: bold;
+}
+
+.digit {
+  letter-spacing: 4px;
+  font-size: 32px;
+  display: block;
+  margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.video {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px #00ffaa55;
+}
+
+.selfie-section {
+  margin-top: 20px;
+}
+
+.preview-section {
+  margin-top: 20px;
+}
+
+.selfie-preview {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffaa88;
+  margin-bottom: 20px;
+}
+
+.email-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.email-input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  background: #0f1115;
+  color: #f0f0f0;
+  min-width: 260px;
+}
+
+.loading-section { margin-top: 20px; }
+.error { color: #ff6b6b; }
+.code { margin-top: 16px; font-weight: bold; }
