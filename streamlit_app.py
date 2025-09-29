@@ -152,6 +152,10 @@ CUSTOM_CSS = """
 .section-card .stMarkdown {
     color: #e2e8f0 !important;
 }
+.section-card [data-testid="stMarkdownContainer"],
+.section-card [data-testid="stMarkdownContainer"] * {
+    color: #e2e8f0 !important;
+}
 .section-card .stMarkdown p,
 .section-card .stMarkdown span,
 .section-card .stMarkdown li {
