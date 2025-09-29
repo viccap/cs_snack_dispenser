@@ -40,7 +40,7 @@ CUSTOM_CSS = """
 }
 [data-testid="stHeader"] { background: rgba(0,0,0,0); }
 .block-container {
-    padding: 3rem 3rem 4rem;
+    padding: 2.4rem 2.4rem 3rem;
     max-width: 960px;
 }
 .hero-card {
@@ -134,16 +134,20 @@ CUSTOM_CSS = """
     color: white;
 }
 .section-card {
-    background: rgba(15,23,42,0.72);
-    border: 1px solid rgba(148,163,184,0.18);
-    border-radius: 24px;
-    padding: 1.9rem 2.1rem;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.03), 0 18px 38px rgba(15,23,42,0.45);
-    margin-bottom: 1.7rem;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 1.6rem 0;
+    margin-bottom: 1.3rem;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(148,163,184,0.2);
+}
+.section-card:last-of-type {
+    border-bottom: none;
 }
 .section-card h3 {
     color: #f8fafc;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.35rem;
 }
 [data-testid="stCheckbox"] label {
     font-weight: 600;
@@ -225,6 +229,69 @@ img {
     text-align: center;
     color: #bbf7d0;
 }
+@media (max-width: 900px) {
+    .block-container {
+        padding: 1.8rem 1.6rem 2.5rem;
+    }
+    .hero-card {
+        padding: 2rem;
+    }
+    .hero-sub {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 640px) {
+    .block-container {
+        padding: 1.2rem 1rem 2rem;
+        max-width: 100%;
+    }
+    .hero-card {
+        padding: 1.6rem;
+        border-radius: 20px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+    .hero-card:before {
+        display: none;
+    }
+    .hero-sub {
+        font-size: 0.95rem;
+    }
+    .section-card {
+        padding: 1.3rem 0;
+        margin-bottom: 1.1rem;
+        border-bottom-color: rgba(148,163,184,0.12);
+    }
+    .stepper {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .step {
+        flex: 1 1 100%;
+        min-width: 100%;
+        padding: 0.85rem 1rem;
+    }
+    .code-block {
+        font-size: 1.1rem;
+        letter-spacing: 0.16em;
+    }
+    .stButton button, [data-testid="stCameraInput"] button {
+        width: 100%;
+        text-align: center;
+    }
+}
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    .hero-badge {
+        font-size: 0.8rem;
+    }
+    .hero-card {
+        padding: 1.4rem;
+    }
+}
 </style>
 """
 
@@ -288,13 +355,10 @@ def render_consent_step() -> None:
     st.markdown("### Schritt 1 · Digitale Zustimmung")
     st.caption("Wir lieben Snacks, aber noch mehr lieben wir Checkboxen. Für Informationen über den Inhalt der Richtilinen, schreiben sie uns gerne eine Email. (Bearbeitungszeit 3-4 Werktage) :)")
 
-    col_a, col_b = st.columns(2)
-    with col_a:
-        policy = st.checkbox("Datenschutzrichtlinie", key="policy")
-        terms = st.checkbox("Nutzungsbedingungen", key="terms")
-    with col_b:
-        emails = st.checkbox("Erhalt von E-Mails", key="emails")
-        cookies = st.checkbox("Cookies akzeptieren", key="cookies")
+    policy = st.checkbox("Datenschutzrichtlinie", key="policy")
+    terms = st.checkbox("Nutzungsbedingungen", key="terms")
+    emails = st.checkbox("Erhalt von E-Mails", key="emails")
+    cookies = st.checkbox("Cookies akzeptieren", key="cookies")
 
     all_checked = policy and terms and emails and cookies
     st.button(
