@@ -149,6 +149,17 @@ CUSTOM_CSS = """
     color: #f8fafc;
     margin-bottom: 0.35rem;
 }
+.section-card .stMarkdown {
+    color: #e2e8f0 !important;
+}
+.section-card .stMarkdown p,
+.section-card .stMarkdown span,
+.section-card .stMarkdown li {
+    color: #e2e8f0 !important;
+}
+[data-testid="stCaption"] {
+    color: #cbd5f5 !important;
+}
 [data-testid="stCheckbox"] label {
     font-weight: 600;
     color: #ffffff !important;
