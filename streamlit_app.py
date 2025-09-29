@@ -149,11 +149,13 @@ CUSTOM_CSS = """
     color: #f8fafc;
     margin-bottom: 0.35rem;
 }
-.section-card .stMarkdown {
+.section-card [data-testid=\"stMarkdownContainer\"] {
     color: #e2e8f0 !important;
 }
-.section-card [data-testid="stMarkdownContainer"],
-.section-card [data-testid="stMarkdownContainer"] * {
+.section-card [data-testid=\"stMarkdownContainer\"] * {
+    color: #e2e8f0 !important;
+}
+.section-card .stMarkdown {
     color: #e2e8f0 !important;
 }
 .section-card .stMarkdown p,
